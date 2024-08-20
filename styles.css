@@ -119,6 +119,7 @@ body {
 }
 
 /* Neon Theme */
+/* Neon Theme */
 body.neon {
     background-color: #000;
     color: #0f0;
@@ -131,12 +132,14 @@ body.neon .controls button, body.neon .theme-selector select {
 }
 
 body.neon .circle {
-    background: rgba(0, 255, 0, 0.3);
+    background: rgba(0, 255, 0, 0.3); /* Ensure visibility with a lighter green */
+    border: 2px solid #0f0; /* Add border to make the circle more defined */
 }
 
 body.neon .progress {
-    border-top-color: #0f0; /* Neon Green */
+    border-top-color: rgb(71, 190, 71); /* Neon Green */
 }
+
 
 /* Retro Theme */
 body.retro {

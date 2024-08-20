@@ -87,7 +87,11 @@ document.addEventListener('DOMContentLoaded', () => {
         countdownBtn.textContent = countdownMode ? 'Count Up' : 'Countdown';
         if (countdownMode) {
             const input = prompt("Enter countdown time in seconds:");
-            countdownTarget = parseInt(input, 10) || 0;
+            countdownTarget = parseInt(input, 10);
+            if (isNaN(countdownTarget) || countdownTarget <= 0) {
+                countdownTarget = 0;
+                alert("Invalid input. Countdown time reset to 0.");
+            }
             seconds = countdownTarget;
         } else {
             seconds = 0; // Reset to 0 when switching to count up
