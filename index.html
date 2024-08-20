@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stopwatch with Themes</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="background">
+        <!-- Videos for different themes -->
+        <video id="videoNeon" class="theme-video" autoplay loop muted>
+            <source src="neon.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <video id="videoRetro" class="theme-video" autoplay loop muted>
+            <source src="retro.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <video id="videoClassic" class="theme-video" autoplay loop muted>
+            <source src="classic.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    <div class="stopwatch">
+        <div class="circle">
+            <div class="progress" id="progress"></div>
+            <div class="inner-circle" id="display">00:00:00</div>
+        </div>
+        <div class="controls">
+            <button id="startBtn">Start</button>
+            <button id="pauseBtn">Pause</button>
+            <button id="resetBtn">Reset</button>
+            <button id="lapBtn">Lap</button>
+            <button id="countdownBtn">Countdown</button>
+        </div>
+        <div class="laps">
+            <ul id="lapList"></ul>
+        </div>
+        <div class="theme-selector">
+            <select id="theme">
+                <option value="Neon">Cosmic Neon</option>
+                <option value="retro">Pink Paradise</option>
+                <option value="classic">Power Play</option>
+            </select>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

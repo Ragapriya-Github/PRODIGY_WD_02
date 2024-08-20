@@ -1,0 +1,179 @@
+/* Base Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Press Start 2P', cursive; /* Retro arcade font */
+    color: #fff;
+    overflow: hidden;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.background {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+
+.theme-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    display: none; /* Hide all videos initially */
+}
+
+/* Styles for displaying videos */
+.theme-video.active {
+    display: block; /* Only show the active video */
+}
+
+.stopwatch {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+
+.circle {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.inner-circle {
+    position: absolute;
+    z-index: 1;
+    font-size: 2rem;
+}
+
+.progress {
+    position: absolute;
+    border-radius: 50%;
+    border: 10px solid transparent;
+    width: 100%;
+    height: 100%;
+    transition: border-top-color 0.3s ease;
+}
+
+/* Keyframes for spinning animation */
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.progress {
+    animation: spin 10s linear infinite;
+}
+
+/* Controls and Theme Selector Styles */
+.controls button, .theme-selector select {
+    margin: 5px;
+    padding: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+    background: #222;
+    border: 2px solid #0f0;
+    color: #0f0;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    font-weight: bold; /* Make button text bold */
+}
+
+.controls button:hover, .theme-selector select:hover {
+    background: #0f0;
+    color: #222;
+}
+
+.laps {
+    margin-top: 20px;
+}
+
+.laps ul {
+    list-style: none;
+    padding: 0;
+}
+
+.laps li {
+    padding: 5px 0;
+    border-bottom: 1px solid #555;
+}
+
+.theme-selector {
+    margin-top: 20px;
+}
+
+/* Neon Theme */
+body.neon {
+    background-color: #000;
+    color: #0f0;
+}
+
+body.neon .controls button, body.neon .theme-selector select {
+    background: #0f0;
+    color: #000;
+    border: 2px solid #0f0;
+}
+
+body.neon .circle {
+    background: rgba(0, 255, 0, 0.3);
+}
+
+body.neon .progress {
+    border-top-color: #0f0; /* Neon Green */
+}
+
+/* Retro Theme */
+body.retro {
+    background-color: #222;
+    color: #f9c;
+}
+
+body.retro .controls button, body.retro .theme-selector select {
+    background: #f9c;
+    color: #222;
+    border: 2px solid #f9c;
+}
+
+body.retro .circle {
+    background: rgba(255, 192, 203, 0.3);
+}
+
+body.retro .progress {
+    border-top-color: #f9c; /* Retro Pink */
+}
+
+/* Classic Theme */
+body.classic {
+    background-color: #f0f0f0;
+    color:rgb(172, 64, 50);
+}
+
+body.classic .controls button, body.classic .theme-selector select {
+    background:rgb(172, 64, 50);
+    color: #141111;
+    border: 2px solid rgb(172, 64, 50);
+}
+
+body.classic .circle {
+    background: rgba(129, 52, 52, 0.1);
+}
+
+body.classic .progress {
+    border-top-color: rgb(172, 64, 50);
+}
